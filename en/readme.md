@@ -42,7 +42,7 @@ export default ({
 | type   | Number    | 0：success，1：warning，2：error    |
 | duration?  | Number   |             |
 | title? | String |  |
-| content? | String |  |
+| content | String |  |
 | confirmText? | String |  |
 | showCancel? | Boolean |  |
 | cancelText? | String |  |
