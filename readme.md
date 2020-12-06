@@ -1,4 +1,4 @@
-中文文档 | [Englist](./en/README.MD)
+中文文档 | [Englist](./en/readme.md)
 
 # 基于Vue3的dialog插件
 
