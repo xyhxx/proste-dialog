@@ -1,6 +1,6 @@
 {
   "name": "proste-dialog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于vue3开发的dialog插件",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
