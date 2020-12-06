@@ -1,8 +1,9 @@
 {
   "name": "proste-dialog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于vue3开发的dialog插件",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,14 +25,6 @@
     "vue",
     "vue3",
     "dialog",
-    "plugin",
-  ],
-  "typings": "./dist/index.d.ts",
-  "keywords": [
-    "vue",
-    "vue3",
-    "loading",
-    "plugin",
-    "load"
-  ],
+    "plugin"
+  ]
 }
