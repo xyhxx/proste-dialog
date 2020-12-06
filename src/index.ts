@@ -14,6 +14,7 @@ import {
   prosteDialog,
   initProvide,
   useDialogFunction,
+  ProsteDialogOptions,
 } from './types/type_interface';
 
 const prosteDialogPlugin = Symbol('prosteDialogPlugin');
@@ -36,7 +37,7 @@ const typeArr: ProsteDialogTipsType[] = [{
 }];
 /** 相应参数 */
 const state = reactive<ProsteDialogElementOptions>({
-  isShowToast: false,
+  show: false,
   isShowBtnGroup: false,
   isShowCancelBtn: false,
   cancelContent: '取消',
@@ -51,12 +52,12 @@ const state = reactive<ProsteDialogElementOptions>({
 /** 按钮点击触发 */
 const clickFunction = (e: MouseEvent) => {
   const { state: result } = (e.target as HTMLElement)?.dataset;
-  state.isShowToast = false;
+  state.show = false;
   state.callback(result === 'true');
 };
 /** 初始化参数 */
 const initOptions = reactive<ProsteDialogInitOptions>({
-  theme: '#e53935',
+  theme: '#234173',
   color: 'white',
 })
 /** 初始化弹窗元素 */
@@ -64,7 +65,7 @@ let el = document.querySelector('#xyhToast');
 if (!el) {
   const toastElement = createApp({
     render() {
-      return h('div', { id: 'xyhToast', style: state.isShowToast ? '' : 'display: none' }, [
+      return h('div', { id: 'xyhToast', style: state.show ? '' : 'display: none' }, [
         h('div', { id: 'xyhToastInfo' }, [
           h('div', { id: 'iconBg', style: 'background-image: url(' + state.typeImgBg + ')' }, [
             h('img', { id: 'stateIcon', class: state.animationClass, src: state.typeImg }),
@@ -92,7 +93,7 @@ if (!el) {
       ]);
     },
   });
-  if(document.querySelector('#xyhDialogPlugin')){
+  if(!document.querySelector('#xyhDialogPlugin')){
     const loadingParent = document.createElement('div');
     loadingParent.id = 'xyhToastPlugin';
     document.body.appendChild(loadingParent);
@@ -124,13 +125,13 @@ const showDialog:prosteDialog = ({
   state.animationClass = ['vivify', cls];
   if (duration > 0) {
     state.isShowBtnGroup = false;
-    state.isShowToast = true;
+    state.show = true;
     setTimeout(() => {
-      state.isShowToast = false;
+      state.show = false;
     }, duration);
   } else {
     state.isShowBtnGroup = true;
-    state.isShowToast = true;
+    state.show = true;
   }
 };
 
@@ -156,3 +157,5 @@ export const useDialog: useDialogFunction = () => {
 
   return dialogPlugin;
 }
+
+export {ProsteDialogOptions, ProsteDialogInitOptions};

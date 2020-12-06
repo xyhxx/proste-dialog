@@ -4,7 +4,7 @@ interface ProsteDialogTipsType {
     cls: string;
 }
 interface ProsteDialogElementOptions {
-    isShowToast: boolean;
+    show: boolean;
     isShowBtnGroup: boolean;
     isShowCancelBtn: boolean;
     cancelContent: string;
@@ -31,6 +31,6 @@ interface ProsteDialogOptions {
     callback?: (result?: boolean) => void;
 }
 declare type prosteDialog = (options: ProsteDialogOptions) => void;
-declare type initProvide = (options: ProsteDialogInitOptions) => void;
+declare type initProvide = (options?: ProsteDialogInitOptions) => void;
 declare type useDialogFunction = () => prosteDialog;
-export { ProsteDialogTipsType, ProsteDialogElementOptions, ProsteDialogInitOptions, prosteDialog, initProvide, useDialogFunction, };
+export { ProsteDialogTipsType, ProsteDialogElementOptions, ProsteDialogInitOptions, prosteDialog, initProvide, useDialogFunction, ProsteDialogOptions, };

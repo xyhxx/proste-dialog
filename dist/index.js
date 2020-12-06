@@ -25,7 +25,7 @@ var typeArr = [{
     }];
 /** 相应参数 */
 var state = reactive({
-    isShowToast: false,
+    show: false,
     isShowBtnGroup: false,
     isShowCancelBtn: false,
     cancelContent: '取消',
@@ -41,12 +41,12 @@ var state = reactive({
 var clickFunction = function (e) {
     var _a;
     var result = ((_a = e.target) === null || _a === void 0 ? void 0 : _a.dataset).state;
-    state.isShowToast = false;
+    state.show = false;
     state.callback(result === 'true');
 };
 /** 初始化参数 */
 var initOptions = reactive({
-    theme: '#e53935',
+    theme: '#234173',
     color: 'white',
 });
 /** 初始化弹窗元素 */
@@ -54,7 +54,7 @@ var el = document.querySelector('#xyhToast');
 if (!el) {
     var toastElement = createApp({
         render: function () {
-            return h('div', { id: 'xyhToast', style: state.isShowToast ? '' : 'display: none' }, [
+            return h('div', { id: 'xyhToast', style: state.show ? '' : 'display: none' }, [
                 h('div', { id: 'xyhToastInfo' }, [
                     h('div', { id: 'iconBg', style: 'background-image: url(' + state.typeImgBg + ')' }, [
                         h('img', { id: 'stateIcon', class: state.animationClass, src: state.typeImg }),
@@ -82,7 +82,7 @@ if (!el) {
             ]);
         },
     });
-    if (document.querySelector('#xyhDialogPlugin')) {
+    if (!document.querySelector('#xyhDialogPlugin')) {
         var loadingParent = document.createElement('div');
         loadingParent.id = 'xyhToastPlugin';
         document.body.appendChild(loadingParent);
@@ -107,14 +107,14 @@ var showDialog = function (_a) {
     state.animationClass = ['vivify', cls];
     if (duration > 0) {
         state.isShowBtnGroup = false;
-        state.isShowToast = true;
+        state.show = true;
         setTimeout(function () {
-            state.isShowToast = false;
+            state.show = false;
         }, duration);
     }
     else {
         state.isShowBtnGroup = true;
-        state.isShowToast = true;
+        state.show = true;
     }
 };
 /** 抛出初始化方法 */
