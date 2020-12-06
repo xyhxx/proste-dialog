@@ -67,10 +67,10 @@ export default {
     const dialog = useDialog();
     dialog({
       type: 1,
-      content: '询问内容',
-      confirmText: '确定',
+      content: 'dialog content',
+      confirmText: 'apply',
       showCancel: true,
-      cancelText: '关闭',
+      cancelText: 'cancel',
       callback: res => console.log(res),
     });
   },
