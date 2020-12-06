@@ -1,15 +1,37 @@
 {
   "name": "proste-dialog",
   "version": "1.0.0",
-  "description": "",
+  "description": "基于vue3开发的dialog插件",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "xyh_xx(603331487@qq.com)",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^4.1.2",
     "vue": "^3.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyhxx/proste-dialog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xyhxx/proste-dialog/issues"
+  },
+  "homepage": "https://github.com/xyhxx/proste-dialog#readme",
+  "keywords": [
+    "vue",
+    "vue3",
+    "dialog",
+    "plugin",
+  ],
+  "typings": "./dist/index.d.ts",
+  "keywords": [
+    "vue",
+    "vue3",
+    "loading",
+    "plugin",
+    "load"
+  ],
 }
